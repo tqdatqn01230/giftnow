@@ -1,9 +1,12 @@
 ﻿using GiftNow.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 namespace GiftNow.Controllers
 {
     public class HomeController : Controller
@@ -107,8 +110,10 @@ namespace GiftNow.Controllers
 
 
         }
-        public IActionResult CheckoutSuccess()
+        public IActionResult CheckoutSuccess(string firstName,string lastName,string address
+            , string city, string phone,string email, string giftname)
         {
+            SendMail(firstName,lastName,address,city,phone,email,giftname);
             return View();  
         }
         public IActionResult Index()
@@ -144,6 +149,48 @@ namespace GiftNow.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+        public void SendMail(string firstName, string lastName, string address
+            , string city, string phone, string email1, string giftname)
+        {
+            String SendMailFrom = "tqdatqn01230@gmail.com";
+            String SendMailTo = "giftnow.customercare@gmail.com";
+            String SendMailSubject = "New Order";
+            String SendMailBody =
+                "Gift Name: "+giftname+"\n"
+                +"Customer's Name: "+ firstName+" "+lastName+"\n"
+                + "Address: " + address+"\n"+
+                "City: "+city+"\n"
+                +"Phone: "+phone+"\n"
+                +"Email: "+email1;
+
+            try
+            {
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com", 587);
+                SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
+                MailMessage email = new MailMessage();
+                // START
+                email.From = new MailAddress(SendMailFrom);
+                email.To.Add(SendMailTo);
+                email.CC.Add(SendMailFrom);
+                email.Subject = SendMailSubject;
+                email.Body = SendMailBody;
+                //END
+                SmtpServer.Timeout = 5000;
+                SmtpServer.EnableSsl = true;
+                SmtpServer.UseDefaultCredentials = false;
+                SmtpServer.Credentials = new NetworkCredential(SendMailFrom, "fhvwbnydtwefxapg");
+                SmtpServer.Send(email);
+
+                Console.WriteLine("Email Successfully Sent");
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.ReadKey();
+            }
+            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

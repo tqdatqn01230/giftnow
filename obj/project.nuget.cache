@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eryWf+jGitpkGKcMXd4/YvYKeWTPlztwARSqcrKEacRG3cDuvC3AZbcpwYpR65HQbOOFFIkxp050zUgr1Mq4BQ==",
+  "dgSpecHash": "r4fD0i11/1d7+Q/o91HXN9zayaBGn08r5f5KPeNfGTK7W69op9vvR4yAT1lMlwlEARwbyujeVYAPRenZfC32HA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acern\\source\\repos\\GiftNow\\GiftNow\\GiftNow.csproj",
+  "projectFilePath": "C:\\Users\\acern\\source\\repos\\xuanthulab\\giftnow\\GiftNow.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acern\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\acern\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -20,6 +20,7 @@
     "C:\\Users\\acern\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\acern\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\acern\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\acern\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
     "C:\\Users\\acern\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\5.0.2\\microsoft.visualstudio.web.codegeneration.5.0.2.nupkg.sha512",
     "C:\\Users\\acern\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\5.0.2\\microsoft.visualstudio.web.codegeneration.contracts.5.0.2.nupkg.sha512",
     "C:\\Users\\acern\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\5.0.2\\microsoft.visualstudio.web.codegeneration.core.5.0.2.nupkg.sha512",

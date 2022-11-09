@@ -11,7 +11,7 @@
     <title>GiftNow</title>
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
-    <link rel="shortcut icon" href="~/assets/images/favicon.ico" type="image/png">
+    <link rel="shortcut icon" href="~/assets/favicon.ico" type="image/png">
 
     <!-- ::::::::::::::All CSS Files here :::::::::::::: -->
     <!-- Vendor CSS -->
@@ -662,47 +662,27 @@
             <!-- Start User Details Checkout Form -->
             <div class="checkout_form" data-aos="fade-up"  data-aos-delay="400">
                 <div class="row">
+                    <form action="~/Home/CheckoutSuccess">
                     <div class="col-lg-6 col-md-6">
-                        <form action="#">
+                        
                             <h3>Billing Details</h3>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label>First Name <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="firstName"  required= "">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label>Last Name <span>*</span></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>Company Name</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label for="country">country <span>*</span></label>
-                                        <select class="country_option nice-select wide" name="country" id="country">
-                                            <option value="2">Bangladesh</option>
-                                            <option value="3">Algeria</option>
-                                            <option value="4">Afghanistan</option>
-                                            <option value="5">Ghana</option>
-                                            <option value="6">Albania</option>
-                                            <option value="7">Bahrain</option>
-                                            <option value="8">Colombia</option>
-                                            <option value="9">Dominican Republic</option>
-                                        </select>
+                                        <input type="text" name="lastName" required= "">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="default-form-box">
                                         <label>Street address <span>*</span></label>
-                                        <input placeholder="House number and street name" type="text">
+                                        <input placeholder="House number and street name" name="address" required= "" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -713,25 +693,19 @@
                                 <div class="col-12">
                                     <div class="default-form-box">
                                         <label>Town / City <span>*</span></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>State / County <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="city">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label>Phone<span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="phone" required= "">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label> Email Address <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" required= "" name="email">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -833,10 +807,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        
                     </div>
+                   
                     <div class="col-lg-6 col-md-6">
-                        <form action="~/Home/CheckoutSuccess">
+                        
                             <h3>Your order</h3>
                             <div class="order_table table-responsive">
                                 <table>
@@ -852,7 +827,13 @@
                                         decimal sum = Model.Price + priceForCard + priceForPack;
 
                                     }
+
                                     <tbody>
+                                        <input type="hidden" name="giftname" value="@Model.GiftName"/>
+                                        <input type="hidden" name ="price" value="@Model.Price" />
+                                        <input type="hidden" name= "priceForPack" value="@priceForPack" />
+                                        <input type="hidden" name="priceForCard" value="@priceForCard" />
+
                                         <tr>
                                             <td> @Model.GiftName </td>
                                             <td> @Model.Price</td>
@@ -916,8 +897,9 @@
                                     
                                 </div>
                             </div>
-                        </form>
+                       
                     </div>
+                     </form>
                 </div>
             </div> <!-- Start User Details Checkout Form -->
         </div>
