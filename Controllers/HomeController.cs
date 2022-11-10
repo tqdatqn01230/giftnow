@@ -17,6 +17,9 @@ namespace GiftNow.Controllers
         private List<decimal> package = new List<decimal> { 30000, 50000, 60000 };
         public HomeController(ILogger<HomeController> logger)
         {
+            //Cate 1: body care product / cate 2: skin care / cate 3: hair care product / cate 4: jewels /  cate 5: glasses
+            // cate 6: card 
+            //
             _logger = logger;
             Gift g1 = new Gift();
             g1.GiftId = 1;
@@ -86,27 +89,82 @@ namespace GiftNow.Controllers
             g7.Description = "KingsMan, blah blah Lorem Ipsum is not simply random text. It has roots";
             g7.GiftImage = "gift_images/g7.jpg";
             g7.CateID = 5;
-            g6.Quantity = 6;
+            g7.Quantity = 6;
             gifts.Add(g7);
 
-            Gift g8 = new Gift();
-            g8.GiftId = 8;
-            g8.GiftName = "Trap Card";
-            g8.Price = 10000;
-            g8.Description = "are cards with purple-colored borders that have various effects. A Trap Card must first be Set and can only be activated after the current turn has finished";
-            g8.GiftImage = "gift_images/g8.jpg";
-            g6.CateID = 6;
-            gifts.Add(g8);
+            Gift g10 = new Gift();
+            g10.GiftId = 8;
+            g10.GiftName = "Ví cầm tay nữ";
+            g10.Price = 60000;
+            g10.Description = "Ví Cầm tay nữ";
+            g10.GiftImage = "gift_images/g10.png";
+            g10.CateID = 9;
+            g10.Quantity = 3;
+            gifts.Add(g10);
 
-            Gift g9 = new Gift();
-            g9.GiftId = 8;
-            g9.GiftName = "Reverse Card";
-            g9.Price = 10000;
-            g9.Description = "er player's turn as long as it wasn't set that turn. The effects of certain Normal Trap Cards behave like Equip Cards, but the card is still considered a Normal Trap Card.";
-            g9.GiftImage = "gift_images/g9.png";
-            g9.CateID = 6;
-            g2.Quantity = 3;
-            gifts.Add(g9);
+
+            Gift g11 = new Gift();
+            g11.GiftId = 9;
+            g11.GiftName = "Túi xách đeo bên vai";
+            g11.Price = 99000;
+            g11.Description = "Túi xách đeo bên vai";
+            g11.GiftImage = "gift_images/g11.jpg";
+            g11.CateID = 8;
+            g11.Quantity = 3;
+            gifts.Add(g11);
+            
+            Gift g12 = new Gift();
+            g12.GiftId = 10;
+            g12.GiftName = "Tom Ford Oud Wood";
+            g12.Price = 370000;
+            g12.Description = "Tom Ford Oud Wood";
+            g12.GiftImage = "gift_images/g12.jpg";
+            g12.CateID = 1;
+            g12.Quantity = 3;
+            gifts.Add(g12);
+
+            Gift g13 = new Gift();
+            g13.GiftId = 11;
+            g13.GiftName = "Cọ Trang Điểm";
+            g13.Price = 180000;
+            g13.Description = "Cọ Trang Điểm";
+            g13.GiftImage = "gift_images/g13.png";
+            g13.CateID = 1;
+            g13.Quantity = 3;
+            gifts.Add(g13);
+
+            Gift g14 = new Gift();
+            g14.GiftId = 12;
+            g14.GiftName = "Some One Like You";
+            g14.Price = 625000;
+            g14.Description = "Some One Like You";
+            g14.GiftImage = "gift_images/g14.png";
+            g14.CateID = 1;
+            g14.Quantity = 3;
+            gifts.Add(g14);
+            
+            Gift g15 = new Gift();
+            g15.GiftId = 13;
+            g15.GiftName = "Bear";
+            g15.Price = 70000;
+            g15.Description = "Bear";
+            g15.GiftImage = "gift_images/g15.png";
+            g15.CateID = 8;
+            g15.Quantity = 3;
+            gifts.Add(g15);
+
+            Gift g16 = new Gift();
+            g15.GiftId = 13;
+            g15.GiftName = "Bear";
+            g15.Price = 70000;
+            g15.Description = "Bear";
+            g15.GiftImage = "gift_images/g15.png";
+            g15.CateID = 8;
+            g15.Quantity = 3;
+            gifts.Add(g15);
+
+            //cate 8 : hand bag // cate 9: wallet /cate 7: bag
+
 
 
         }
