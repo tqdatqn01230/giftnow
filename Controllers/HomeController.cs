@@ -38,7 +38,7 @@ namespace GiftNow.Controllers
             g2.GiftImage = "gift_images/g2.jpg";
             g2.Description = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum";
             g2.GiftName = "Sexy Skin Perfume Shower Gel 600ml";
-            g2.CateID = 1;
+            g2.CateID = 11;
             g2.Quantity = 5;
             gifts.Add(g2);
 
@@ -119,7 +119,7 @@ namespace GiftNow.Controllers
             g12.Price = 370000;
             g12.Description = "Tom Ford Oud Wood";
             g12.GiftImage = "gift_images/g12.jpg";
-            g12.CateID = 1;
+            g12.CateID = 11;
             g12.Quantity = 3;
             gifts.Add(g12);
 
@@ -139,7 +139,7 @@ namespace GiftNow.Controllers
             g14.Price = 625000;
             g14.Description = "Some One Like You";
             g14.GiftImage = "gift_images/g14.png";
-            g14.CateID = 1;
+            g14.CateID = 11;
             g14.Quantity = 3;
             gifts.Add(g14);
             
@@ -154,14 +154,85 @@ namespace GiftNow.Controllers
             gifts.Add(g15);
 
             Gift g16 = new Gift();
-            g15.GiftId = 14;
-            g15.GiftName = "Bear";
-            g15.Price = 70000;
-            g15.Description = "Bear";
-            g15.GiftImage = "gift_images/g15.png";
-            g15.CateID = 8;
-            g15.Quantity = 3;
-            gifts.Add(g15);
+            g16.GiftId = 14;
+            g16.GiftName = "Nhẫn LOTR";
+            g16.Price = 800000;
+            g16.Description = "Nhẫn LOTR";
+            g16.GiftImage = "gift_images/g16.png";
+            g16.CateID = 8;
+            g16.Quantity = 3;
+            gifts.Add(g16);
+
+            Gift g17 = new Gift();
+            g17.GiftId = 15;
+            g17.GiftName = "Nhẫn Đẹp";
+            g17.Price = 800000;
+            g17.Description = "Nhẫn Đẹp";
+            g17.GiftImage = "gift_images/g17.jpg";
+            g17.CateID = 8;
+            g17.Quantity = 3;
+            gifts.Add(g17);
+
+            Gift g18 = new Gift();
+            g18.GiftId = 16;
+            g18.GiftName = "Dây Chuyền vàng";
+            g18.Price = 1800000;
+            g18.Description = "Dây Chuyền vàng";
+            g18.GiftImage = "gift_images/g18.jpg";
+            g18.CateID = 8;
+            g18.Quantity = 3;
+            gifts.Add(g18);
+
+            Gift g19 = new Gift();
+            g19.GiftId = 17;
+            g19.GiftName = "Dây Chuyền Bạc";
+            g19.Price = 1800000;
+            g19.Description = "Dây Chuyền Bạc";
+            g19.GiftImage = "gift_images/g19.jpg";
+            g19.CateID = 8;
+            g19.Quantity = 3;
+            gifts.Add(g19);
+
+            Gift g20 = new Gift();
+            g20.GiftId = 18;
+            g20.GiftName = "Mũ Nữ";
+            g20.Price = 1800000;
+            g20.Description = "Mũ Nữ";
+            g20.GiftImage = "gift_images/g20.jpg";
+            g20.CateID = 8;
+            g20.Quantity = 3;
+            gifts.Add(g20);
+
+
+            Gift g21 = new Gift();
+            g21.GiftId = 19;
+            g21.GiftName = "Pochita nhồi bông";
+            g21.Price = 190000;
+            g21.Description = "Pochita nhồi bông";
+            g21.GiftImage = "gift_images/g21.jpg";
+            g21.CateID = 8;
+            g21.Quantity = 3;
+            gifts.Add(g21);
+
+            Gift g22 = new Gift();
+            g22.GiftId = 20;
+            g22.GiftName = "Mèo nhồi bông";
+            g22.Price = 180000;
+            g22.Description = "Mèoữ";
+            g22.GiftImage = "gift_images/g22.jpg";
+            g22.CateID = 8;
+            g22.Quantity = 3;
+            gifts.Add(g22);
+
+            Gift g23 = new Gift();
+            g23.GiftId = 21;
+            g23.GiftName = "Cá mèo";
+            g23.Price = 100000;
+            g23.Description = "Mũ Nữ";
+            g23.GiftImage = "gift_images/g23.jpg";
+            g23.CateID = 8;
+            g23.Quantity = 3;
+            gifts.Add(g23);
 
             //cate 8 : hand bag // cate 9: wallet /cate 7: bag
 
@@ -191,18 +262,18 @@ namespace GiftNow.Controllers
         }
         public IActionResult Detail(int id)
         {
-            return View(gifts[id - 1]);
+            return View(gifts.FirstOrDefault(x=> x.GiftId == id));
         }
         public IActionResult Cart([FromRoute] int id)
         {
-            return View(gifts[id - 1]);
+            return View(gifts.FirstOrDefault(x => x.GiftId == id));
         }
         public IActionResult Checkout( int id,int PackageId,int CardId)
         {
             ViewBag.card = cards[CardId];
 
             ViewBag.pack = package[PackageId];
-            return View(gifts[id - 1]);
+            return View(gifts.FirstOrDefault(x => x.GiftId == id));
         }
         public IActionResult Privacy()
         {
