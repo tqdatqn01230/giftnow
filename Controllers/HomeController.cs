@@ -154,7 +154,7 @@ namespace GiftNow.Controllers
             gifts.Add(g15);
 
             Gift g16 = new Gift();
-            g15.GiftId = 13;
+            g15.GiftId = 14;
             g15.GiftName = "Bear";
             g15.Price = 70000;
             g15.Description = "Bear";
